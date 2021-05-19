@@ -1,0 +1,16 @@
+module S1TestCase
+{
+     import from S1APPort all;
+     import from S1SetupResponse all;
+
+	 testcase MMETest() runs on MMEComp
+	 {
+	     MMEP.receive(S1AP_PDU_S1SETUP_RESPONSE_R_T1);
+		 setverdict(pass);
+	 }
+
+	 control
+	 {
+	     execute(MMETest());
+	 }
+}

@@ -1,0 +1,13 @@
+module S1APPort
+{
+      import from S1AP_PDU_Descriptions language "ASN.1:1997" all ;
+ 	  import from S1AP_PDU_Contents language "ASN.1:1997" all ;
+	  import from S1AP_IEs language "ASN.1:1997" all ;
+	  import from S1AP_Containers language "ASN.1:1997" all ;
+	  import from S1AP_Constants language "ASN.1:1997" all ;
+	  import from S1AP_CommonDataTypes language "ASN.1:1997" all ;
+
+	  type port MMEPort message {in S1AP_PDU;}
+
+	  type component MMEComp {port MMEPort MMEP;}
+}

@@ -1,0 +1,76 @@
+module S1SetupResponse
+{
+      import from S1AP_PDU_Descriptions language "ASN.1:1997" all ;
+ 	  import from S1AP_PDU_Contents language "ASN.1:1997" all ;
+	  import from S1AP_IEs language "ASN.1:1997" all ;
+	  import from S1AP_Containers language "ASN.1:1997" all ;
+	  import from S1AP_Constants language "ASN.1:1997" all ;
+	  import from S1AP_CommonDataTypes language "ASN.1:1997" all ;
+
+	  template S1AP_PDU S1AP_PDU_S1SETUP_RESPONSE_R_T1:=
+	  {
+	      successfulOutcome:=
+		  {
+		      procedureCode:= id_S1Setup,
+ 			  criticality:= reject,
+ 			  value_:=
+			  {
+			      S1SetupResponse:=
+				  {
+				      protocolIEs:=
+					  {
+					      {
+						      id:= id_MMEname,
+ 							  criticality:= ignore,
+							  value_:=
+							  {
+							      MMEname:= "VARANASI MME"
+							  } 
+						  },
+						  {
+                               id:= id_ServedGUMMEIs,
+ 							   criticality:= reject,
+							   value_:=
+							   {
+							       ServedGUMMEIs:=
+								   {
+								       ServedGUMMEIsItem:=
+									   {
+									       servedPLMNs:= 
+										   {
+										       PLMNidentity:= '123456'O
+										   },
+ 										   servedGroupIDs:= 
+										   {
+										       MME_Group-ID:= '2468'O
+										   },
+										   servedMMECs:= 
+										   {
+										       MME_Code:= '12'O
+										   },
+										   iE_Extensions:= omit 
+									   }
+								   }
+							   }
+						  },
+                          {
+						      id:= id_RelativeMMECapacity,
+ 							  criticality:= ignore,
+							  value_:= 
+							  {
+							     RelativeMMECapacity:= 250
+							  }
+						  },
+ 						  {
+						      id:= id_CriticalityDiagnostics,
+ 							  criticality:= ignore,
+							  value_:= omit
+						  } 
+					  }
+				  }
+			  }
+
+		  }
+	  }
+
+}
