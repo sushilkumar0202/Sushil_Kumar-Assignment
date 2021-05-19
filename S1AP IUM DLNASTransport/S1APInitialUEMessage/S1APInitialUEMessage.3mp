@@ -1,0 +1,119 @@
+module S1APInitialUEMessage
+{
+      import from S1AP_PDU_Descriptions language "ASN.1:1997" all ;
+ 	  import from S1AP_PDU_Contents language "ASN.1:1997" all ;
+	  import from S1AP_IEs language "ASN.1:1997" all ;
+	  import from S1AP_Containers language "ASN.1:1997" all ;
+	  import from S1AP_Constants language "ASN.1:1997" all ;
+	  import from S1AP_CommonDataTypes language "ASN.1:1997" all ;
+
+	  template S1AP_PDU S1AP_PDU_INITIALUEMESSAGE_S_T1:=
+	  {
+	      initiatingMessage:=
+		  {
+		      procedureCode:= id_initialUEMessage, //12
+ 			  criticality:= ignore,
+ 			  value_:= 
+			  {
+			      InitialUEMessage:=
+				  {
+				      protocolIEs:=
+					  {
+					      {
+						      id:= id_eNB_UE_S1AP_ID,
+ 							  criticality:= reject,
+							  value_:= 
+							  {
+							      ENB_UE_S1AP_ID:= 435646
+							  }
+						  },
+ 						  {
+						      id:= id_NAS_PDU,
+ 							  criticality:= reject,
+							  value_:= 
+							  {
+							      NAS_PDU:='2468'O
+							  }
+						  },
+						  {
+						      id:= id_TAI,
+ 							  criticality:= reject,
+							  value_:=
+							  {
+							      TAI:=
+							      {
+							           pLMNidentity:= '123456'O,
+ 								       tAC:= '4284'O,
+								       iE_Extensions:= omit
+								  }	    
+							  }
+						  },
+						  {
+						      id:= id_EUTRAN_CGI,
+ 							  criticality:= ignore,
+							  value_:=
+							  {
+							      EUTRAN_CGI:=
+								  {
+								       pLMNidentity:= '123456'O,
+ 									   cell_ID:= '0001010000010101000101001111'B,
+ 									   iE_Extensions:= omit
+								  }							  
+							  }
+						  },
+						  {
+						      id:= id_RRC_Establishment_Cause,
+ 							  criticality:= ignore,
+							  value_:=
+							  {
+							      RRC_Establishment_Cause:=
+								  {
+								      highPriorityAccess
+								  }     
+							  }
+						  },
+						  {
+						      id:= id_S_TMSI,
+ 							  criticality:= reject,
+							  value_:=
+							  {
+							      S_TMSI:= 
+								  {
+								      mMEC:= '24'O,
+ 									  m_TMSI:= '84567321'O,
+									  iE_Extensions:= omit
+								  }
+							  }
+						  },
+						  {
+						      id:= id_CSG_Id,
+ 							  criticality:= reject,
+							  value_:=
+							  {
+							      CSG_Id:=
+								  {
+								      '000100000001000100010100111'B
+								  }
+							  }
+						  }, 
+						  {
+						      id:= id_GUMMEI_ID,
+ 							  criticality:= reject,
+							  value_:=
+							  {
+							      GUMMEI:=
+								  {
+								      pLMN_Identity:= '123456'O,
+ 									  mME_Group-ID:= '1234'O,
+ 									  mME_Code:= '12'O,
+ 									  iE_Extensions:= omit
+								  }
+							  }
+						  }
+					  }
+				  }
+			  }
+		  }
+	  }
+
+}

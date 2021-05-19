@@ -1,0 +1,70 @@
+module DLNASTransport
+{
+      import from S1AP_PDU_Descriptions language "ASN.1:1997" all ;
+ 	  import from S1AP_PDU_Contents language "ASN.1:1997" all ;
+	  import from S1AP_IEs language "ASN.1:1997" all ;
+	  import from S1AP_Containers language "ASN.1:1997" all ;
+	  import from S1AP_Constants language "ASN.1:1997" all ;
+	  import from S1AP_CommonDataTypes language "ASN.1:1997" all ;
+
+	  template S1AP_PDU S1AP_PDU_DLNASTransport_R_T2:=
+	  {
+	     initiatingMessage:=
+		 {
+		    procedureCode:= id_downlinkNASTransport, //11
+ 		    criticality:= ignore,
+ 		    value_
+			{
+			   DownlinkNASTransport:=
+			   {
+			       protocolIEs:=
+				   {
+				       {
+					      id:= id_MME_UE_S1AP_ID,
+ 						  criticality:= reject,
+ 						  value_:= 
+						  {
+						     MME_UE_S1AP_ID:= 54676
+						  }
+					   },
+					   {
+					      id:= id_eNB_UE_S1AP_ID,
+ 						  criticality:= reject,
+ 						  value_:=
+						  {
+						     ENB_UE_S1AP_ID:= 2343546
+						  }
+					   },
+					   {
+					      id:= id_NAS_PDU,
+ 						  criticality:= reject,
+ 						  value_:=
+						  {
+						     NAS_PDU:= '123456'O
+						  }
+					   },
+					   {
+					      id:= id_HandoverRestrictionList,
+ 						  criticality:= ignore,
+ 						  value_:=
+						  {
+						     HandoverRestrictionList:=
+							 {
+							    servingPLMN:=
+								{
+								   PLMNidentity:= '123456'O
+								},
+ 							    equivalentPLMNs:= omit,
+ 							    forbiddenTAs:= omit,
+ 							    forbiddenLAs:= omit,
+ 							    forbiddenInterRATs:= omit,
+								iE_Extensions:= omit	
+							 }
+						  }
+					   }
+				   }
+			   }  
+			}
+		 }
+	  }
+}
