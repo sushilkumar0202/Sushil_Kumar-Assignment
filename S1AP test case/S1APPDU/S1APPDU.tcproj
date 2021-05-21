@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<solution>
+ <scripts>
+  <items>
+   <script>
+    <name>S1AP_CommonDataTypes</name>
+    <file>S1AP_CommonDataTypes.asn</file>
+    <type>asn</type>
+   </script>
+   <script>
+    <name>S1AP_Constants</name>
+    <file>S1AP_Constants.asn</file>
+    <type>asn</type>
+   </script>
+   <script>
+    <name>S1AP_Containers</name>
+    <file>S1AP_Containers.asn</file>
+    <type>asn</type>
+   </script>
+   <script>
+    <name>S1AP_IEs</name>
+    <file>S1AP_IEs.asn</file>
+    <type>asn</type>
+   </script>
+   <script>
+    <name>S1AP_PDU_Contents</name>
+    <file>S1AP_PDU_Contents.asn</file>
+    <type>asn</type>
+   </script>
+   <script>
+    <name>S1AP_PDU_Descriptions</name>
+    <file>S1AP_PDU_Descriptions.asn</file>
+    <type>asn</type>
+   </script>
+   <script>
+    <name>S1APInitialUEMessage</name>
+    <file>S1APInitialUEMessage.ttcn</file>
+    <type>ttcn3</type>
+   </script>
+   <script>
+    <name>DLNASTransport</name>
+    <file>DLNASTransport.ttcn</file>
+    <type>ttcn3</type>
+   </script>
+   <script>
+    <name>S1APPortConfig</name>
+    <file>S1APPortConfig.ttcn</file>
+    <type>ttcn3</type>
+   </script>
+   <script>
+    <name>S1APTestCase</name>
+    <file>S1APTestCase.ttcn</file>
+    <type>ttcn3</type>
+   </script>
+  </items>
+ </scripts>
+ <verstool />
+ <sut>
+  <exe>"C:\Program Files (x86)\Elvior\TestCastT3\UdpAdapter" -x Adapter\udp_conf.xml</exe>
+  <target>"C:\Program Files (x86)\Elvior\TestCastT3\UdpAdapter"</target>
+  <params>-x Adapter\udp_conf.xml</params>
+ </sut>
+ <codec_rules>CodecRules_S1APPDU.txt</codec_rules>
+ <ExternalAttributeFiles>
+  <items />
+ </ExternalAttributeFiles>
+ <ModuleParFiles>
+  <items />
+ </ModuleParFiles>
+ <TestcaseSelections>
+  <items />
+ </TestcaseSelections>
+ <TestCampaigns>
+  <items />
+ </TestCampaigns>
+ <ttcn3_settings>
+  <tc_block />
+  <ttcn3_version>Ttcn3_2020</ttcn3_version>
+  <asn>BER</asn>
+  <dll_timeout>10</dll_timeout>
+  <port>7776</port>
+  <ctime>60</ctime>
+  <sa_count>1</sa_count>
+  <rtime>20</rtime>
+  <codec_type>internal</codec_type>
+  <enc>
+   <plain>
+    <byte_order>be</byte_order>
+    <int>byte</int>
+    <float>double</float>
+    <custom_int>8</custom_int>
+    <string>null</string>
+    <custom_str>32</custom_str>
+    <char>U16</char>
+    <bool>dword</bool>
+    <bin>dword</bin>
+    <custom_bin>16</custom_bin>
+    <align>1</align>
+    <coll>word</coll>
+    <str_unit>bytes</str_unit>
+    <pad />
+    <str_end>\r\n</str_end>
+    <uni_end>\r\n</uni_end>
+    <any>none</any>
+   </plain>
+  </enc>
+  <no_bs_dq />
+  <length-form>definite</length-form>
+  <forbidden_ctrl_warn />
+  <omit-match-err />
+  <log-tmpt-names />
+  <strict-def-check />
+  <default-step>0.1</default-step>
+  <strict-ver-check />
+  <dll_ctimeout>10</dll_ctimeout>
+  <no-snapshot />
+  <no-attr-for-asn />
+  <ext-sa-type>process</ext-sa-type>
+  <ext-pa-type>process</ext-pa-type>
+ </ttcn3_settings>
+</solution>

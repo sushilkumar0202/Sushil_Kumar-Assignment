@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<log>
+ <name>session_log</name>
+ <items>
+  <li>
+   <time>4676326532482158565</time>
+   <sys>Default codec rules activated for this session</sys>
+  </li>
+  <li>
+   <time>4676326532482207878</time>
+   <sys>TRI/TCI module: waiting for TCP/IP connection requests on address :: port 7776</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326532577653186</time>
+   <err>TRI failure: No SA connection</err>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326532577653186</time>
+   <err>TRI failure: No PA connection</err>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326532577653186</time>
+   <sys>TTCN-3 session terminated due to a TRI/TCI error</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+ </items>
+</log>

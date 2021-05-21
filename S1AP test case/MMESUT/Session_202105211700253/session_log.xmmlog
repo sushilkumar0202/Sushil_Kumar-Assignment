@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<log>
+ <name>session_log</name>
+ <items>
+  <li>
+   <time>4676326541856336688</time>
+   <sys>Default codec rules activated for this session</sys>
+  </li>
+  <li>
+   <time>4676326541856336688</time>
+   <sys>TRI/TCI module: waiting for TCP/IP connection requests on address :: port 7777</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326541856610293</time>
+   <sys>TRI/TCI module: TCP/IP connection request accepted, waiting for handshake</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326541856610293</time>
+   <sys>Handshake message received, protocol version 12</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326541856610293</time>
+   <sys>SA successfully activated (external module name: Generic UDP Adapter)</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326541856610293</time>
+   <sys>PA successfully activated (external module name: Generic UDP Adapter)</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326541856610293</time>
+   <sys>All TCP/IP-based interfaces have been successfully activated</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326541856809134</time>
+   <sys>Compiler version: 6.16.1.19; default TTCN-3 version: TTCN-3:2020; build: 34852; license type: professional; runtime: 64bit .NET 4.0.30319.42000</sys>
+   <ttcn3_settings>
+    <tc_block />
+    <ttcn3_version>Ttcn3_2020</ttcn3_version>
+    <asn>BER</asn>
+    <dll_timeout>10</dll_timeout>
+    <port>7777</port>
+    <ctime>60</ctime>
+    <sa_count>1</sa_count>
+    <rtime>20</rtime>
+    <codec_type>internal</codec_type>
+    <enc>
+     <plain>
+      <byte_order>be</byte_order>
+      <int>byte</int>
+      <float>double</float>
+      <custom_int>8</custom_int>
+      <string>null</string>
+      <custom_str>32</custom_str>
+      <char>U16</char>
+      <bool>dword</bool>
+      <bin>dword</bin>
+      <custom_bin>16</custom_bin>
+      <align>1</align>
+      <coll>word</coll>
+      <str_unit>bytes</str_unit>
+      <pad />
+      <str_end>\r\n</str_end>
+      <uni_end>\r\n</uni_end>
+      <any>none</any>
+     </plain>
+    </enc>
+    <no_bs_dq />
+    <length-form>definite</length-form>
+    <forbidden_ctrl_warn />
+    <omit-match-err />
+    <log-tmpt-names />
+    <strict-def-check />
+    <default-step>0.1</default-step>
+    <strict-ver-check />
+    <dll_ctimeout>10</dll_ctimeout>
+    <no-snapshot />
+    <no-attr-for-asn />
+    <ext-sa-type>process</ext-sa-type>
+    <ext-pa-type>process</ext-pa-type>
+   </ttcn3_settings>
+  </li>
+  <li>
+   <time>4676326541856809134</time>
+   <sys>The SUTTestCase script is up-to-date.</sys>
+  </li>
+  <li>
+   <time>4676326541856933211</time>
+   <scr_start>
+    <script>SUTTestCase</script>
+   </scr_start>
+  </li>
+  <li>
+   <time>4676326541856933211</time>
+   <comp_create>
+    <name>MTC</name>
+    <id>14</id>
+   </comp_create>
+   <cmpt>CONTROL</cmpt>
+  </li>
+  <li>
+   <time>4676326541856933211</time>
+   <case_start>
+    <name>SUTTestCase.SUTTest</name>
+    <file>SUTTestCase</file>
+    <line>19</line>
+   </case_start>
+   <cmpt>CONTROL</cmpt>
+  </li>
+  <li>
+   <time>4676326542469842542</time>
+   <verdict>
+    <name>MTC</name>
+    <id>14</id>
+    <verdict>error</verdict>
+    <reason>Test execution has been interrupted.</reason>
+    <file>SUTTestCase</file>
+    <line>21</line>
+   </verdict>
+   <cmpt>MTC</cmpt>
+  </li>
+  <li>
+   <time>4676326542469891855</time>
+   <comp_end>
+    <name>MTC</name>
+    <id>14</id>
+    <verdict>error</verdict>
+    <reason>Test execution has been interrupted.</reason>
+    <ops>
+     <op>
+      <instr>3</instr>
+     </op>
+     <op>
+      <instr>363</instr>
+      <file>SUTTestCase</file>
+      <line>21</line>
+     </op>
+     <op>
+      <instr>354</instr>
+      <file>SUTTestCase</file>
+      <line>21</line>
+     </op>
+     <op>
+      <instr>446</instr>
+     </op>
+     <op>
+      <instr>481</instr>
+     </op>
+     <op>
+      <instr>606</instr>
+      <file>SUTTestCase</file>
+      <line>21</line>
+     </op>
+     <op>
+      <instr>402</instr>
+     </op>
+     <op>
+      <instr>412</instr>
+     </op>
+     <op>
+      <instr>398</instr>
+      <file>SUTTestCase</file>
+      <line>21</line>
+     </op>
+     <op>
+      <instr>397</instr>
+     </op>
+    </ops>
+   </comp_end>
+   <cmpt>MTC</cmpt>
+  </li>
+  <li>
+   <time>4676326542469891855</time>
+   <comp_killed>
+    <name>MTC</name>
+    <id>14</id>
+   </comp_killed>
+   <cmpt>MTC</cmpt>
+  </li>
+  <li>
+   <time>4676326542469891855</time>
+   <case_end>
+    <name>SUTTestCase.SUTTest</name>
+    <verdict>error</verdict>
+    <file>SUTTestCase</file>
+    <line>23</line>
+   </case_end>
+   <cmpt>CONTROL</cmpt>
+  </li>
+  <li>
+   <time>4676326542469891855</time>
+   <scr_end>
+    <script>SUTTestCase</script>
+   </scr_end>
+  </li>
+  <li>
+   <time>4676326542469917306</time>
+   <sys>TRI/TCI module: TCP/IP connection terminated by the TE</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+ </items>
+</log>

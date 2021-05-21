@@ -1,0 +1,29 @@
+/*
+ * @author
+ *     
+ * @version
+ *     1.0
+ * @desc
+ *     
+ * @remark
+ *     
+ * @see
+ *     
+ */ 
+module SUTTestCase 
+{
+    import from SUTConfig all;
+    import from S1APInitialUEMessage all;
+    import from DLNASTransport all;
+    
+    testcase SUTTest() runs on MMEComp
+    {
+        MMEP.receive(S1AP_PDU_INITIALUEMESSAGE_R_T1);
+        MMEP.send(S1AP_PDU_DLNASTransport_S_T2);
+    }
+    
+    control
+    {
+        execute(SUTTest());
+    }
+}

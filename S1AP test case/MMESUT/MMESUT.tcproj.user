@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<user_space>
+ <logs>
+  <items>
+   <log>Session_202105211521566\session_log.xmmlog</log>
+   <log>Session_202105211531496\session_log.xmmlog</log>
+   <log>Session_202105211541468\session_log.xmmlog</log>
+   <log>Session_202105211649296\session_log.xmmlog</log>
+   <log>Session_202105211700253\session_log.xmmlog</log>
+   <log>Session_202105211706581\session_log.xmmlog</log>
+  </items>
+ </logs>
+ <open>
+  <scripts>
+   <item>
+    <name>MMEDLNASTransport</name>
+    <tab>
+     <pos>1</pos>
+     <ln>0</ln>
+     <crln>12</crln>
+     <crcl>7</crcl>
+    </tab>
+   </item>
+   <item>
+    <name>MMES1APInitialUEMessage</name>
+    <tab>
+     <pos>2</pos>
+     <ln>0</ln>
+     <crln>12</crln>
+     <crcl>7</crcl>
+    </tab>
+   </item>
+   <item>
+    <name>S1AP_CommonDataTypes</name>
+    <tab>
+     <pos>3</pos>
+     <ln>0</ln>
+     <crln>0</crln>
+     <crcl>0</crcl>
+    </tab>
+   </item>
+   <item>
+    <name>S1AP_Constants</name>
+    <tab>
+     <pos>4</pos>
+     <ln>0</ln>
+     <crln>0</crln>
+     <crcl>0</crcl>
+    </tab>
+   </item>
+   <item>
+    <name>S1AP_Containers</name>
+    <tab>
+     <pos>5</pos>
+     <ln>0</ln>
+     <crln>0</crln>
+     <crcl>0</crcl>
+    </tab>
+   </item>
+   <item>
+    <name>S1AP_IEs</name>
+    <tab>
+     <pos>6</pos>
+     <ln>0</ln>
+     <crln>0</crln>
+     <crcl>0</crcl>
+    </tab>
+   </item>
+   <item>
+    <name>S1AP_PDU_Contents</name>
+    <tab>
+     <pos>7</pos>
+     <ln>0</ln>
+     <crln>0</crln>
+     <crcl>0</crcl>
+    </tab>
+   </item>
+   <item>
+    <name>S1AP_PDU_Descriptions</name>
+    <tab>
+     <pos>8</pos>
+     <ln>0</ln>
+     <crln>0</crln>
+     <crcl>0</crcl>
+    </tab>
+   </item>
+   <item>
+    <name>SUTConfig</name>
+    <tab>
+     <pos>9</pos>
+     <ln>0</ln>
+     <crln>22</crln>
+     <crcl>47</crcl>
+    </tab>
+   </item>
+   <item>
+    <name>SUTTestCase</name>
+    <tab>
+     <pos>10</pos>
+     <ln>0</ln>
+     <crln>16</crln>
+     <crcl>16</crcl>
+    </tab>
+   </item>
+  </scripts>
+  <logs>
+   <item>
+    <name>Session_202105211706581\session_log.xmmlog</name>
+    <tab>
+     <pos>11</pos>
+     <active />
+    </tab>
+   </item>
+  </logs>
+ </open>
+ <campaigns />
+ <ext_att />
+ <ext_mp />
+ <tc_sel />
+ <session_reports />
+ <watches />
+ <set_breakpoints>
+  <scripts />
+ </set_breakpoints>
+</user_space>

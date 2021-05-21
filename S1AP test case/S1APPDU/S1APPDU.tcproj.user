@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<user_space>
+ <logs>
+  <items>
+   <log>Session_202105211522123\session_log.xmmlog</log>
+   <log>Session_202105211532120\session_log.xmmlog</log>
+   <log>Session_202105211538116\session_log.xmmlog</log>
+   <log>Session_202105211542024\session_log.xmmlog</log>
+   <log>Session_202105211649395\session_log.xmmlog</log>
+   <log>Session_202105211700348\session_log.xmmlog</log>
+   <log>Session_202105211707082\session_log.xmmlog</log>
+   <log>Session_202105211707523\session_log.xmmlog</log>
+  </items>
+ </logs>
+ <open>
+  <scripts>
+   <item>
+    <name>S1AP_CommonDataTypes</name>
+    <tab>
+     <pos>2</pos>
+     <ln>0</ln>
+     <crln>0</crln>
+     <crcl>0</crcl>
+    </tab>
+   </item>
+   <item>
+    <name>S1AP_Constants</name>
+    <tab>
+     <pos>3</pos>
+     <ln>41</ln>
+     <crln>0</crln>
+     <crcl>0</crcl>
+    </tab>
+   </item>
+   <item>
+    <name>S1AP_Containers</name>
+    <tab>
+     <pos>4</pos>
+     <ln>96</ln>
+     <crln>0</crln>
+     <crcl>0</crcl>
+    </tab>
+   </item>
+   <item>
+    <name>S1AP_IEs</name>
+    <tab>
+     <pos>5</pos>
+     <ln>999</ln>
+     <crln>1012</crln>
+     <crcl>60</crcl>
+    </tab>
+   </item>
+   <item>
+    <name>S1AP_PDU_Contents</name>
+    <tab>
+     <pos>6</pos>
+     <ln>1251</ln>
+     <crln>1282</crln>
+     <crcl>81</crcl>
+    </tab>
+   </item>
+   <item>
+    <name>S1AP_PDU_Descriptions</name>
+    <tab>
+     <pos>7</pos>
+     <ln>0</ln>
+     <crln>0</crln>
+     <crcl>0</crcl>
+    </tab>
+   </item>
+   <item>
+    <name>S1APInitialUEMessage</name>
+    <tab>
+     <pos>1</pos>
+     <ln>8</ln>
+     <crln>21</crln>
+     <crcl>51</crcl>
+    </tab>
+   </item>
+   <item>
+    <name>DLNASTransport</name>
+    <tab>
+     <pos>8</pos>
+     <ln>0</ln>
+     <crln>21</crln>
+     <crcl>49</crcl>
+    </tab>
+   </item>
+   <item>
+    <name>S1APPortConfig</name>
+    <tab>
+     <pos>9</pos>
+     <ln>0</ln>
+     <crln>22</crln>
+     <crcl>51</crcl>
+    </tab>
+   </item>
+   <item>
+    <name>S1APTestCase</name>
+    <tab>
+     <pos>10</pos>
+     <active />
+     <ln>5</ln>
+     <crln>20</crln>
+     <crcl>31</crcl>
+    </tab>
+   </item>
+  </scripts>
+  <logs />
+ </open>
+ <campaigns />
+ <ext_att />
+ <ext_mp />
+ <tc_sel />
+ <session_reports />
+ <watches />
+ <set_breakpoints>
+  <scripts>
+   <script>
+    <script_name>S1APTestCase</script_name>
+    <breakpoints />
+   </script>
+  </scripts>
+ </set_breakpoints>
+</user_space>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<udp_conf>
+ <tri_port>7776</tri_port>
+ <buffer>65535</buffer>
+ <no_pa>False</no_pa>
+ <port_map>
+  <item>
+   <tsi>S1APP</tsi>
+   <sut_addr>103.14.120.121</sut_addr>
+   <sut_port>36412</sut_port>
+   <sa_port>36412</sa_port>
+  </item>
+ </port_map>
+</udp_conf>

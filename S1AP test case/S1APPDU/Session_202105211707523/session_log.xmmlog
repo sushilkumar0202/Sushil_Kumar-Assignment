@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<log>
+ <name>session_log</name>
+ <items>
+  <li>
+   <time>4676326542567351026</time>
+   <sys>Default codec rules activated for this session</sys>
+  </li>
+  <li>
+   <time>4676326542567351026</time>
+   <sys>TRI/TCI module: waiting for TCP/IP connection requests on address :: port 7776</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326542567573728</time>
+   <sys>TRI/TCI module: TCP/IP connection request accepted, waiting for handshake</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326542567599179</time>
+   <sys>Handshake message received, protocol version 12</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326542567599179</time>
+   <sys>SA successfully activated (external module name: Generic UDP Adapter)</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326542567599179</time>
+   <sys>PA successfully activated (external module name: Generic UDP Adapter)</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326542567599179</time>
+   <sys>All TCP/IP-based interfaces have been successfully activated</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326542567772569</time>
+   <sys>Compiler version: 6.16.1.19; default TTCN-3 version: TTCN-3:2020; build: 34852; license type: professional; runtime: 64bit .NET 4.0.30319.42000</sys>
+   <ttcn3_settings>
+    <tc_block />
+    <ttcn3_version>Ttcn3_2020</ttcn3_version>
+    <asn>BER</asn>
+    <dll_timeout>10</dll_timeout>
+    <port>7776</port>
+    <ctime>60</ctime>
+    <sa_count>1</sa_count>
+    <rtime>20</rtime>
+    <codec_type>internal</codec_type>
+    <enc>
+     <plain>
+      <byte_order>be</byte_order>
+      <int>byte</int>
+      <float>double</float>
+      <custom_int>8</custom_int>
+      <string>null</string>
+      <custom_str>32</custom_str>
+      <char>U16</char>
+      <bool>dword</bool>
+      <bin>dword</bin>
+      <custom_bin>16</custom_bin>
+      <align>1</align>
+      <coll>word</coll>
+      <str_unit>bytes</str_unit>
+      <pad />
+      <str_end>\r\n</str_end>
+      <uni_end>\r\n</uni_end>
+      <any>none</any>
+     </plain>
+    </enc>
+    <no_bs_dq />
+    <length-form>definite</length-form>
+    <forbidden_ctrl_warn />
+    <omit-match-err />
+    <log-tmpt-names />
+    <strict-def-check />
+    <default-step>0.1</default-step>
+    <strict-ver-check />
+    <dll_ctimeout>10</dll_ctimeout>
+    <no-snapshot />
+    <no-attr-for-asn />
+    <ext-sa-type>process</ext-sa-type>
+    <ext-pa-type>process</ext-pa-type>
+   </ttcn3_settings>
+  </li>
+  <li>
+   <time>4676326542567772569</time>
+   <sys>Starting compilation of the S1APTestCase script...</sys>
+  </li>
+  <li>
+   <time>4676326542567772569</time>
+   <sys>The S1AP_CommonDataTypes script is up-to-date.</sys>
+  </li>
+  <li>
+   <time>4676326542567772569</time>
+   <sys>The S1AP_Constants script is up-to-date.</sys>
+  </li>
+  <li>
+   <time>4676326542567772569</time>
+   <sys>The S1AP_Containers script is up-to-date.</sys>
+  </li>
+  <li>
+   <time>4676326542567772569</time>
+   <sys>The S1AP_IEs script is up-to-date.</sys>
+  </li>
+  <li>
+   <time>4676326542567772569</time>
+   <sys>The S1AP_PDU_Contents script is up-to-date.</sys>
+  </li>
+  <li>
+   <time>4676326542567772569</time>
+   <sys>The S1AP_PDU_Descriptions script is up-to-date.</sys>
+  </li>
+  <li>
+   <time>4676326542567772569</time>
+   <sys>The S1APPortConfig script is up-to-date.</sys>
+  </li>
+  <li>
+   <time>4676326542567772569</time>
+   <sys>The DLNASTransport script is up-to-date.</sys>
+  </li>
+  <li>
+   <time>4676326542567772569</time>
+   <sys>The S1APInitialUEMessage script is up-to-date.</sys>
+  </li>
+  <li>
+   <time>4676326542567821881</time>
+   <sys>Script "S1APTestCase" compiled successfully. 0 errors, 0 warnings.</sys>
+  </li>
+  <li>
+   <time>4676326542567821881</time>
+   <sys>Compilation succeeded; 0 errors, 0 warnings.</sys>
+  </li>
+  <li>
+   <time>4676326542567996861</time>
+   <scr_start>
+    <script>S1APTestCase</script>
+   </scr_start>
+  </li>
+  <li>
+   <time>4676326542567996861</time>
+   <comp_create>
+    <name>MTC</name>
+    <id>17</id>
+   </comp_create>
+   <cmpt>CONTROL</cmpt>
+  </li>
+  <li>
+   <time>4676326542567996861</time>
+   <case_start>
+    <name>S1APTestCase.S1APTest</name>
+    <file>S1APTestCase</file>
+    <line>19</line>
+   </case_start>
+   <cmpt>CONTROL</cmpt>
+  </li>
+  <li>
+   <time>4676326542567996861</time>
+   <tmsg out="">
+    <snd>MTC(id 17).S1APP</snd>
+    <rcv>SYSTEM(id 18).S1APP</rcv>
+    <uni name="S1APInitialUEMessage.S1AP_PDU_INITIALUEMESSAGE_S_T1">
+     <rec name="initiatingMessage">
+      <val name="procedureCode">12</val>
+      <val name="criticality">ignore</val>
+      <any name="value_">
+       <rec name="S1AP_PDU_Contents.InitialUEMessage">
+        <r_of name="protocolIEs">
+         <rec>
+          <val name="id">8</val>
+          <val name="criticality">reject</val>
+          <any name="value_">
+           <val name="S1AP_IEs.ENB_UE_S1AP_ID">435646</val>
+          </any>
+         </rec>
+         <rec>
+          <val name="id">26</val>
+          <val name="criticality">reject</val>
+          <any name="value_">
+           <val name="S1AP_IEs.NAS_PDU">'2468'O</val>
+          </any>
+         </rec>
+         <rec>
+          <val name="id">67</val>
+          <val name="criticality">reject</val>
+          <any name="value_">
+           <rec name="S1AP_IEs.TAI">
+            <val name="pLMNidentity">'123456'O</val>
+            <val name="tAC">'4284'O</val>
+            <r_of name="iE_Extensions" omit="" />
+           </rec>
+          </any>
+         </rec>
+         <rec>
+          <val name="id">100</val>
+          <val name="criticality">ignore</val>
+          <any name="value_">
+           <rec name="S1AP_IEs.EUTRAN_CGI">
+            <val name="pLMNidentity">'123456'O</val>
+            <val name="cell_ID">'0001010000010101000101001111'B</val>
+            <r_of name="iE_Extensions" omit="" />
+           </rec>
+          </any>
+         </rec>
+         <rec>
+          <val name="id">134</val>
+          <val name="criticality">ignore</val>
+          <any name="value_">
+           <val name="S1AP_IEs.RRC_Establishment_Cause">mo_Signalling</val>
+          </any>
+         </rec>
+         <rec>
+          <val name="id">96</val>
+          <val name="criticality">reject</val>
+          <any name="value_">
+           <rec name="S1AP_IEs.S_TMSI">
+            <val name="mMEC">'24'O</val>
+            <val name="m_TMSI">'84567321'O</val>
+            <r_of name="iE_Extensions" omit="" />
+           </rec>
+          </any>
+         </rec>
+         <rec>
+          <val name="id">127</val>
+          <val name="criticality">reject</val>
+          <any name="value_">
+           <val name="S1AP_IEs.CSG_Id">'000100000001000100010100111'B</val>
+          </any>
+         </rec>
+         <rec>
+          <val name="id">75</val>
+          <val name="criticality">reject</val>
+          <any name="value_">
+           <rec name="S1AP_IEs.GUMMEI">
+            <val name="pLMN_Identity">'123456'O</val>
+            <val name="mME_Group_ID">'1234'O</val>
+            <val name="mME_Code">'12'O</val>
+            <r_of name="iE_Extensions" omit="" />
+           </rec>
+          </any>
+         </rec>
+        </r_of>
+       </rec>
+      </any>
+     </rec>
+     <val name="successfulOutcome" />
+     <val name="unsuccessfulOutcome" />
+    </uni>
+    <bin>MIGlgAEMgQEBgoGcMIGZoIGWMA2AAQiBAQCCBQIDBqW+MAyAARqBAQCCBAQCJGgwE4ABQ4EBAIILMAmAAxI0VoECQoQwFoABZIEBAYIOMAyAAxI0VoEFBBQVFPAwDIACAIaBAQGCAwoBAzATgAFggQEAggswCYABJIEEhFZzITAPgAF/gQEAggcDBQUQERTgMBaAAUuBAQCCDjAMgAMSNFaBAhI0ggES</bin>
+    <file>S1APTestCase</file>
+    <line>22</line>
+   </tmsg>
+   <cmpt>MTC</cmpt>
+  </li>
+  <li>
+   <time>4676326542568020722</time>
+   <tmr_s>
+    <id>6</id>
+    <time>1.0E1</time>
+    <file>S1APTestCase</file>
+    <line>23</line>
+   </tmr_s>
+   <cmpt>MTC</cmpt>
+  </li>
+  <li>
+   <time>4676326542583932781</time>
+   <tmr_d>
+    <id>6</id>
+    <file>S1APTestCase</file>
+    <line>23</line>
+   </tmr_d>
+   <cmpt>MTC</cmpt>
+  </li>
+  <li>
+   <time>4676326542583932781</time>
+   <timer>
+    <id>6</id>
+    <time>1.0E1</time>
+    <file>S1APTestCase</file>
+    <line>37</line>
+   </timer>
+   <cmpt>MTC</cmpt>
+  </li>
+  <li>
+   <time>4676326542583932781</time>
+   <verdict>
+    <name>MTC</name>
+    <id>17</id>
+    <verdict>fail</verdict>
+    <file>S1APTestCase</file>
+    <line>39</line>
+   </verdict>
+   <cmpt>MTC</cmpt>
+  </li>
+  <li>
+   <time>4676326542583978912</time>
+   <comp_end>
+    <name>MTC</name>
+    <id>17</id>
+    <verdict>fail</verdict>
+    <ops>
+     <op>
+      <instr>481</instr>
+     </op>
+     <op>
+      <instr>330</instr>
+      <file>S1APTestCase</file>
+      <line>37</line>
+     </op>
+     <op>
+      <instr>400</instr>
+     </op>
+     <op>
+      <instr>10</instr>
+      <file>S1APTestCase</file>
+      <line>38</line>
+     </op>
+     <op>
+      <instr>269</instr>
+      <file>S1APTestCase</file>
+      <line>39</line>
+     </op>
+     <op>
+      <instr>242</instr>
+      <file>S1APTestCase</file>
+      <line>39</line>
+     </op>
+     <op>
+      <instr>28</instr>
+     </op>
+     <op>
+      <instr>149</instr>
+      <file>S1APTestCase</file>
+      <line>39</line>
+     </op>
+     <op>
+      <instr>401</instr>
+     </op>
+     <op>
+      <instr>398</instr>
+      <file>S1APTestCase</file>
+      <line>25</line>
+     </op>
+    </ops>
+   </comp_end>
+   <cmpt>MTC</cmpt>
+  </li>
+  <li>
+   <time>4676326542583978912</time>
+   <comp_killed>
+    <name>MTC</name>
+    <id>17</id>
+   </comp_killed>
+   <cmpt>MTC</cmpt>
+  </li>
+  <li>
+   <time>4676326542583978912</time>
+   <case_end>
+    <name>S1APTestCase.S1APTest</name>
+    <verdict>fail</verdict>
+    <file>S1APTestCase</file>
+    <line>43</line>
+   </case_end>
+   <cmpt>CONTROL</cmpt>
+  </li>
+  <li>
+   <time>4676326542583978912</time>
+   <scr_end>
+    <script>S1APTestCase</script>
+   </scr_end>
+  </li>
+  <li>
+   <time>4676326542584002773</time>
+   <sys>TRI/TCI module: TCP/IP connection terminated by the TE</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+ </items>
+</log>

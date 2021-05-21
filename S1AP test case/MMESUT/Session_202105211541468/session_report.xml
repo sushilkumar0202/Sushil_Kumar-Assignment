@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="session_report.xsl"?>
+<session_report>
+ <project>MMESUT</project>
+ <start_time>5/21/2021 3:41:46 PM</start_time>
+ <end_time>5/21/2021 4:45:52 PM</end_time>
+ <duration>01:04:05</duration>
+ <campaigns>
+  <campaign>
+   <test_cases>
+    <test_case>
+     <name>SUTTestCase.SUTTest</name>
+     <tc_file>SUTTestCase</tc_file>
+     <tc_line>19</tc_line>
+     <verdict>error</verdict>
+     <details>
+      <comp>MTC</comp>
+      <file>SUTTestCase</file>
+      <line>21</line>
+      <reason>Test execution has been interrupted.</reason>
+      <li>29</li>
+     </details>
+     <elapsed>3845006</elapsed>
+    </test_case>
+   </test_cases>
+  </campaign>
+ </campaigns>
+</session_report>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="session_report.xsl"?>
+<session_report>
+ <project>S1APPDU</project>
+ <start_time>5/21/2021 5:00:34 PM</start_time>
+ <end_time>5/21/2021 5:00:45 PM</end_time>
+ <duration>00:00:10</duration>
+ <campaigns>
+  <campaign>
+   <test_cases>
+    <test_case>
+     <name>S1APTestCase.S1APTest</name>
+     <tc_file>S1APTestCase</tc_file>
+     <tc_line>19</tc_line>
+     <verdict>fail</verdict>
+     <details>
+      <comp>MTC</comp>
+      <file>S1APTestCase</file>
+      <line>38</line>
+      <li>16</li>
+     </details>
+     <elapsed>10045</elapsed>
+    </test_case>
+   </test_cases>
+  </campaign>
+ </campaigns>
+</session_report>

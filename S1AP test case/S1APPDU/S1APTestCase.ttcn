@@ -1,0 +1,51 @@
+/*
+ * @author
+ *     
+ * @version
+ *     1.0
+ * @desc
+ *     
+ * @remark
+ *     
+ * @see
+ *     
+ */ 
+module S1APTestCase 
+{
+    import from S1APPortConfig all;
+    import from DLNASTransport all;
+    import from S1APInitialUEMessage all;
+    
+    testcase S1APTest() runs on S1APComp
+    {
+        timer S1APtimer:= 10.0;
+        S1APP.send(S1AP_PDU_INITIALUEMESSAGE_S_T1);
+        S1APtimer.start;
+        
+        alt
+        {
+            []S1APP.receive(S1AP_PDU_DLNASTransport_R_T2)
+            {
+                S1APtimer.stop;
+                setverdict(pass);
+            }
+            []S1APP.receive
+            {
+                S1APtimer.stop;
+                setverdict(fail);
+            }
+            []S1APtimer.timeout
+            {
+                setverdict(fail);
+            }
+        }    
+           
+    }
+    
+    control
+    {
+        execute(S1APTest());
+    }
+        
+    
+}

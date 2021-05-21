@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<log>
+ <name>session_log</name>
+ <items>
+  <li>
+   <time>4676326542497109221</time>
+   <sys>Default codec rules activated for this session</sys>
+  </li>
+  <li>
+   <time>4676326542497109221</time>
+   <sys>TRI/TCI module: waiting for TCP/IP connection requests on address :: port 7776</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326542497331923</time>
+   <sys>TRI/TCI module: TCP/IP connection request accepted, waiting for handshake</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326542497331923</time>
+   <sys>Handshake message received, protocol version 12</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326542497331923</time>
+   <sys>SA successfully activated (external module name: Generic UDP Adapter)</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326542497331923</time>
+   <sys>PA successfully activated (external module name: Generic UDP Adapter)</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326542497331923</time>
+   <sys>All TCP/IP-based interfaces have been successfully activated</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+  <li>
+   <time>4676326542497530765</time>
+   <sys>Compiler version: 6.16.1.19; default TTCN-3 version: TTCN-3:2020; build: 34852; license type: professional; runtime: 64bit .NET 4.0.30319.42000</sys>
+   <ttcn3_settings>
+    <tc_block />
+    <ttcn3_version>Ttcn3_2020</ttcn3_version>
+    <asn>BER</asn>
+    <dll_timeout>10</dll_timeout>
+    <port>7776</port>
+    <ctime>60</ctime>
+    <sa_count>1</sa_count>
+    <rtime>20</rtime>
+    <codec_type>internal</codec_type>
+    <enc>
+     <plain>
+      <byte_order>be</byte_order>
+      <int>byte</int>
+      <float>double</float>
+      <custom_int>8</custom_int>
+      <string>null</string>
+      <custom_str>32</custom_str>
+      <char>U16</char>
+      <bool>dword</bool>
+      <bin>dword</bin>
+      <custom_bin>16</custom_bin>
+      <align>1</align>
+      <coll>word</coll>
+      <str_unit>bytes</str_unit>
+      <pad />
+      <str_end>\r\n</str_end>
+      <uni_end>\r\n</uni_end>
+      <any>none</any>
+     </plain>
+    </enc>
+    <no_bs_dq />
+    <length-form>definite</length-form>
+    <forbidden_ctrl_warn />
+    <omit-match-err />
+    <log-tmpt-names />
+    <strict-def-check />
+    <default-step>0.1</default-step>
+    <strict-ver-check />
+    <dll_ctimeout>10</dll_ctimeout>
+    <no-snapshot />
+    <no-attr-for-asn />
+    <ext-sa-type>process</ext-sa-type>
+    <ext-pa-type>process</ext-pa-type>
+   </ttcn3_settings>
+  </li>
+  <li>
+   <time>4676326542497530765</time>
+   <sys>Starting compilation of the S1APTestCase script...</sys>
+  </li>
+  <li>
+   <time>4676326542497530765</time>
+   <sys>Starting compilation of the S1APPortConfig script...</sys>
+  </li>
+  <li>
+   <time>4676326542497530765</time>
+   <sys>The S1AP_CommonDataTypes script is up-to-date.</sys>
+  </li>
+  <li>
+   <time>4676326542497530765</time>
+   <sys>The S1AP_Constants script is up-to-date.</sys>
+  </li>
+  <li>
+   <time>4676326542497530765</time>
+   <sys>The S1AP_Containers script is up-to-date.</sys>
+  </li>
+  <li>
+   <time>4676326542497530765</time>
+   <sys>The S1AP_IEs script is up-to-date.</sys>
+  </li>
+  <li>
+   <time>4676326542497530765</time>
+   <sys>The S1AP_PDU_Contents script is up-to-date.</sys>
+  </li>
+  <li>
+   <time>4676326542497530765</time>
+   <sys>The S1AP_PDU_Descriptions script is up-to-date.</sys>
+  </li>
+  <li>
+   <time>4676326542497581668</time>
+   <sys>Script "S1APPortConfig" compiled successfully. 0 errors, 0 warnings.</sys>
+  </li>
+  <li>
+   <time>4676326542497581668</time>
+   <sys>The DLNASTransport script is up-to-date.</sys>
+  </li>
+  <li>
+   <time>4676326542497581668</time>
+   <sys>The S1APInitialUEMessage script is up-to-date.</sys>
+  </li>
+  <li>
+   <time>4676326542497581668</time>
+   <err>Script "S1APTestCase": Line 21: ";" expected</err>
+  </li>
+  <li>
+   <time>4676326542497581668</time>
+   <sys>Script "S1APTestCase" contained errors. 1 errors, 0 warnings.</sys>
+  </li>
+  <li>
+   <time>4676326542497581668</time>
+   <sys>Compilation failed; 1 errors, 0 warnings.</sys>
+  </li>
+  <li>
+   <time>4676326542497805961</time>
+   <sys>TRI/TCI module: TCP/IP connection terminated by the TE</sys>
+   <cmpt>{TRI}</cmpt>
+  </li>
+ </items>
+</log>
