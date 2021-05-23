@@ -1,0 +1,7 @@
+module S1APTemplate
+{
+    import from S1APMessage all;
+
+	template S1AP_InitialUEMessage S1AP_IUM_S_T1:= "ENB S1AP UEID+NAS:AttachRequest+PDNConnectReq+ECGI+TAI";
+	template S1AP_DLNASTransport S1AP_DLNT_R_T1:= "ENB S1AP UEID+MME S1AP UEID+NAS:AuthenticationReq";
+}

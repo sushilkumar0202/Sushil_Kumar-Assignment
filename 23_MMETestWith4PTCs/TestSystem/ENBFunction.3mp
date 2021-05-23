@@ -1,0 +1,160 @@
+module ENBFunction
+{
+   import from TestSystemConfig all;
+   import from S1APTemplate all; 
+   import from ControlTemplate all; 
+
+   function ENBJob() runs on ENB_PTC
+   {
+      PTCCP1.receive(Start_SF_T1);
+      SF1_S_SR_R_SRs();
+      PTCCP1.send(Finished_SF_T1);
+
+ 	  PTCCP1.receive(Start_SF_T1); 
+ 	  SF2_S_IUM_R_DLNAST();
+ 	  PTCCP1.send(Finished_SF_T1); 
+
+ 	  PTCCP1.receive(Start_SF_T1); 
+	  SF3_S_ULNAST_R_DLNAST();
+ 	  PTCCP1.send(Finished_SF_T1); 
+
+ 	  PTCCP1.receive(Start_SF_T1); 
+	  SF4_S_ULNAST_R_DLNAST()();
+      PTCCP1.send(Finished_SF_T1);
+
+ 	  PTCCP1.receive(Start_SF_T1); 
+	  SF5_S_ULNAST_R_IUCSR();
+      PTCCP1.send(Finished_SF_T1);
+
+ 	  PTCCP1.receive(Start_SF_T1); 
+	  SF6_S_IUCSRs_S_ULNAST();
+	  PTCCP1.send(Finished_SF_T1); 
+   }
+
+   function SF1_S_SR_R_SRs() runs on ENB_PTC
+   {
+       S1APP.send(SR_S_T1);
+	   t1.start;
+
+	   alt
+	   {
+	      []S1APP.receive(SRs_R_T1)
+		  {
+		     t1.stop;
+			 setverdict(pass);
+		  }
+		  []S1APP.receive
+		  {
+		     t1.stop;
+			 setverdict(fail);
+		  }
+		  []t1.timeout
+		  {
+			 setverdict(fail);
+		  }
+	   }
+   }
+
+   function SF2_S_IUM_R_DLNAST() runs on ENB_PTC
+   {
+       S1APP.send(IUM_S_T1);
+	   t1.start;
+
+	   alt
+	   {
+	      []S1APP.receive(DLNAST_R_T1)
+		  {
+		     t1.stop;
+			 setverdict(pass);
+		  }
+		  []S1APP.receive
+		  {
+		     t1.stop;
+			 setverdict(fail);
+		  }
+		  []t1.timeout
+		  {
+			 setverdict(fail);
+		  }
+	   }
+   }
+   
+   function SF3_S_ULNAST_R_DLNAST() runs on ENB_PTC
+   {
+       S1APP.send(ULNAST_S_T1);
+	   t1.start;
+
+	   alt
+	   {
+	      []S1APP.receive(DLNAST_R_T2)
+		  {
+		     t1.stop;
+			 setverdict(pass);
+		  }
+		  []S1APP.receive
+		  {
+		     t1.stop;
+			 setverdict(fail);
+		  }
+		  []t1.timeout
+		  {
+			 setverdict(fail);
+		  }
+	   }
+   }
+   
+   function SF4_S_ULNAST_R_DLNAST() runs on ENB_PTC
+   {
+       S1APP.send(ULNAST_S_T2);
+	   t1.start;
+
+	   alt
+	   {
+	      []S1APP.receive(DLNAST_R_T3)
+		  {
+		     t1.stop;
+			 setverdict(pass);
+		  }
+		  []S1APP.receive
+		  {
+		     t1.stop;
+			 setverdict(fail);
+		  }
+		  []t1.timeout
+		  {
+			 setverdict(fail);
+		  }
+	   }
+   }
+   
+   function SF5_S_ULNAST_R_IUCSR() runs on ENB_PTC
+   {
+       S1APP.send(ULNAST_S_T3);
+	   t1.start;
+
+	   alt
+	   {
+	      []S1APP.receive(IUCSR_R_T1)
+		  {
+		     t1.stop;
+			 setverdict(pass);
+		  }
+		  []S1APP.receive
+		  {
+		     t1.stop;
+			 setverdict(fail);
+		  }
+		  []t1.timeout
+		  {
+			 setverdict(fail);
+		  }
+	   }
+   } 
+   
+   function SF6_S_IUCSRs_S_ULNAST() runs on ENB_PTC
+   {
+       S1APP.send(IUCSRs_S_T1);
+ 	   S1APP.send(ULNAST_S_T4);
+	   setverdict(pass);
+   }   
+}

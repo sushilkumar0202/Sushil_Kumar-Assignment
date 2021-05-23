@@ -1,0 +1,17 @@
+module S1APTemplate
+{
+   import from S1APMessage all;
+
+   template SR SR_S_T1:= "enb id+enb name+tai+pdrx";
+   template SRs SRs_R_T1:= "mme id+mme name+mme capacity";
+   template IUM IUM_S_T1:= "enb s1ap ueid+cgi+tai+nas";
+   template DLNAST DLNAST_R_T1:= "enb s1ap ueid+mme s1ap ueid+nas:ar";
+   template ULNAST ULNAST_S_T1:= "enb s1ap ueid+mme s1ap ueid+nas:ars+ecgi+tai";
+   template DLNAST DLNAST_R_T2:= "enb s1ap ueid+mme s1ap ueid+nas:smc";
+   template ULNAST ULNAST_S_T2:= "enb s1ap ueid+mme s1ap ueid+nas:smco+ecgi+tai";
+   template DLNAST DLNAST_R_T3:= "enb s1ap ueid+mme s1ap ueid+nas:ir"; 
+   template ULNAST ULNAST_S_T3:= "enb s1ap ueid+mme s1ap ueid+nas:irs+ecgi+tai";
+   template IUCSR IUCSR_R_T1:= "enb s1ap ueid+mme s1ap ueid+qos+e-rab+sgw teid+kenb+nas:aa+dbar";
+   template IUCSRs IUCSRs_S_T1:= "enb s1ap ueid+mme s1ap ueid+enb teid";
+   template ULNAST ULNAST_S_T4:= "enb s1ap ueid+mme s1ap ueid+nas:aa+dbaa+ecgi+tai";
+}

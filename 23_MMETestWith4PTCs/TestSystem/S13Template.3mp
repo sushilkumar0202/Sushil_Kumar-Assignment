@@ -1,0 +1,9 @@
+module S13Template
+{
+   import from S13Message all;
+
+   template DWRe DWRe_S_T1:= "oh+or+osid";
+   template DWAe DWAe_R_T1:= "dr+oh+or+osid"; 
+   template ICR ICR_R_T1:= "imsi+imei"; 
+   template ICA ICA_S_T1:= "imei status"; 
+}

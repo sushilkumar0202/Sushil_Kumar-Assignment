@@ -1,0 +1,7 @@
+module ControlTemplate
+{
+   import from ControlMessage all;
+
+   template Start_SF Start_SF_T1:= "start your next sub function";
+   template Finished_SF Finished_SF_T1:= "my sub function execution finished"; 
+}

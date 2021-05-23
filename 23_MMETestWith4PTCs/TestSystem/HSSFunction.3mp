@@ -1,0 +1,121 @@
+module HSSFunction
+{
+   import from TestSystemConfig all;
+   import from S6ATemplate all; 
+   import from ControlTemplate all; 
+
+   function HSSJob() runs on HSS_PTC
+   {
+      PTCCP2.receive(Start_SF_T1);
+      SF1_S_DWR_R_DWA();
+ 	  PTCCP2.send(Finished_SF_T1); 
+
+ 	  PTCCP2.receive(Start_SF_T1); 
+ 	  SF2_S_AIA_R_AIR();
+ 	  PTCCP2.send(Finished_SF_T1); 
+      
+ 	  PTCCP2.receive(Start_SF_T1); 
+	  SF3_S_ULA_R_ULR();
+      PTCCP2.send(Finished_SF_T1);
+
+ 	  PTCCP2.receive(Start_SF_T1); 
+	  SF4_S_NA_R_NR(); 
+ 	  PTCCP2.send(Finished_SF_T1); 
+   } 
+
+   function SF1_S_DWR_R_DWA() runs on HSS_PTC
+   {
+      S6AP.send(DWR_S_T1);
+	  t2.start;
+
+	  alt
+	  {
+	     []S6AP.receive(DWA_R_T1)
+		 {
+		    t2.stop;
+			setverdict(pass);
+		 }
+		 []S6AP.receive
+		 {
+		    t2.stop;
+			setverdict(fail);
+		 }
+		 []t2.timeout
+		 {
+		    setverdict(fail);
+		 }
+	  }
+   }
+
+   function SF2_S_AIA_R_AIR() runs on HSS_PTC
+   {
+	  t2.start;
+
+	  alt
+	  {
+	     []S6AP.receive(AIR_R_T1)
+		 {
+		    t2.stop;
+ 		    S6AP.send(AIA_S_T1);	
+			setverdict(pass);
+		 }
+		 []S6AP.receive
+		 {
+		    t2.stop;
+			setverdict(fail);
+		 }
+		 []t2.timeout
+		 {
+		    setverdict(fail);
+		 }
+	  }
+   } 
+   
+   function SF3_S_ULA_R_ULR() runs on HSS_PTC
+   {
+	  t2.start;
+
+	  alt
+	  {
+	     []S6AP.receive(ULR_R_T1)
+		 {
+		    t2.stop;
+ 		    S6AP.send(ULA_S_T1);	
+			setverdict(pass);
+		 }
+		 []S6AP.receive
+		 {
+		    t2.stop;
+			setverdict(fail);
+		 }
+		 []t2.timeout
+		 {
+		    setverdict(fail);
+		 }
+	  }
+   }
+   
+   function SF4_S_NA_R_NR() runs on HSS_PTC
+   {
+	  t2.start;
+
+	  alt
+	  {
+	     []S6AP.receive(NR_R_T1)
+		 {
+		    t2.stop;
+ 		    S6AP.send(NA_S_T1);	
+			setverdict(pass);
+		 }
+		 []S6AP.receive
+		 {
+		    t2.stop;
+			setverdict(fail);
+		 }
+		 []t2.timeout
+		 {
+		    setverdict(fail);
+		 }
+	  }
+   } 
+}

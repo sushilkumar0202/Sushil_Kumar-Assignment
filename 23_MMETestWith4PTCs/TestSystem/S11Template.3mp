@@ -1,0 +1,11 @@
+module S11Template
+{
+   import from S11Message all;
+
+   template ER ER_S_T1:= "recovery+privateextension";
+   template ERs ERs_R_T1:= "recovery+privateextension";
+   template CSR CSR_R_T1:= "imsi+mme s11teid+pgw ipaddr"; 
+   template CSRs CSRs_S_T1:= "sgw s11 teid+pgw teid+sgw s1u teid+ue ip"; 
+   template MBR MBR_R_T1:= "enb s1u teid"; 
+   template MBRs MBRs_S_T1:= "gtpc success"; 
+}

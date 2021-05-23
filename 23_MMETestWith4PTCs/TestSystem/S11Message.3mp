@@ -1,0 +1,9 @@
+module S11Message
+{
+   type charstring ER;
+   type charstring ERs;
+   type charstring CSR;
+   type charstring CSRs; 
+   type charstring MBR;
+   type charstring MBRs; 
+}

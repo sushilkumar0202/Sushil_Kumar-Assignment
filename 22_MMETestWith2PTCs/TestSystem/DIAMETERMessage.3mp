@@ -1,0 +1,5 @@
+module DIAMETERMessage
+{
+   type charstring DIAMETER_AIR;
+   type charstring DIAMETER_AIA;
+}

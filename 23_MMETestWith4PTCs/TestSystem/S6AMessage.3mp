@@ -1,0 +1,12 @@
+module S6AMessage
+{
+   type charstring DWR;
+   type charstring DWA;
+   type charstring AIR;
+   type charstring AIA;
+   type charstring ULR;
+   type charstring ULA;
+   type charstring NR;
+   type charstring NA; 
+
+}

@@ -1,0 +1,65 @@
+module EIRFunction
+{
+    import from TestSystemConfig all;
+    import from S13Template all;	
+    import from ControlTemplate all;	
+
+   function EIRJob() runs on EIR_PTC
+   {
+      PTCCP3.receive(Start_SF_T1);
+      SF1_S_DWRe_R_DWAe();
+      PTCCP3.send(Finished_SF_T1);
+
+ 	  PTCCP3.receive(Start_SF_T1); 
+ 	  SF2_S_ICA_R_ICR();
+      PTCCP3.send(Finished_SF_T1);
+   }	
+
+   function SF1_S_DWRe_R_DWAe() runs on EIR_PTC 
+   {
+      S13P.send(DWRe_S_T1);
+	  t3.start;
+
+	  alt
+	  {
+	    []S13P.receive(DWAe_R_T1)
+		{
+		   t3.stop;
+		   setverdict(pass);
+		}
+		[]S13P.receive
+		{
+		   t3.stop;
+		   setverdict(fail);
+		}
+		[]t3.timeout
+		{
+		   setverdict(fail);
+		}
+	  }
+   }
+
+   function SF2_S_ICA_R_ICR() runs on EIR_PTC 
+   {
+	  t3.start;
+
+	  alt
+	  {
+	    []S13P.receive(ICR_R_T1)
+		{
+		   t3.stop;
+ 		   S13P.send(ICA_S_T1); 
+		   setverdict(pass);
+		}
+		[]S13P.receive
+		{
+		   t3.stop;
+		   setverdict(fail);
+		}
+		[]t3.timeout
+		{
+		   setverdict(fail);
+		}
+	  }
+   } 
+}

@@ -1,0 +1,15 @@
+module S6ATemplate
+{
+   import from S6AMessage all;
+
+   template DWR DWR_S_T1:= "oh+or+osid";
+   template DWA DWA_R_T1:= "dr+oh+or+osid"; 
+   template AIR AIR_R_T1:= "imsi+eutran.a.d"; 
+   template AIA AIA_S_T1:= "dr+kasme+xres+autn+rand"; 
+   template ULR ULR_R_T1:= "imsi+mmeid";
+   template ULA ULA_S_T1:= "dr+subscriber info";
+   template NR NR_R_T1:= "pdn info";
+   template NA NA_S_T1:= "dr"; 
+    
+    
+}

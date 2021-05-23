@@ -1,0 +1,8 @@
+module S13Message
+{
+   type charstring DWRe;
+   type charstring DWAe;
+   type charstring ICR;
+   type charstring ICA;
+    
+}

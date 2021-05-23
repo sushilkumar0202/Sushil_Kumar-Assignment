@@ -1,0 +1,59 @@
+module TestSystemConfig
+{
+  import from S1APMessage all;
+  import from S6AMessage all;
+  import from S13Message all;
+  import from S11Message all;
+  import from ControlMessage all; 
+  
+  type port S1APPort message
+  {
+     out SR,IUM,ULNAST,IUCSRs;
+	 in SRs,DLNAST,IUCSR;
+  } 
+
+  type port S6APort message 
+  {
+     out DWR,AIA,ULA,NA;
+	 in DWA,AIR,ULR,NR;
+  }
+
+  type port S13Port message
+  {
+     out DWRe,ICA;
+	 in DWAe,ICR;
+  }
+
+  type port S11Port message
+  {
+     out ER,CSRs,MBRs;
+	 in ERs,CSR,MBR;
+  }
+
+  type port MTCControlPort message
+  {
+     out Start_SF;
+	 in Finished_SF;
+  }
+
+  type port PTCControlPort message
+  {
+     out Finished_SF;
+	 in Start_SF;
+  }
+
+  type component ENB_PTC {port S1APPort S1APP; timer t1:= 10.0; port PTCControlPort PTCCP1;} 
+  type component HSS_PTC {port S6APort S6AP; timer t2:= 10.0; port PTCControlPort PTCCP2;}
+  type component EIR_PTC {port S13Port S13P; timer t3:= 10.0; port PTCControlPort PTCCP3;}
+  type component SGW_PTC {port S11Port S11P; timer t4:= 10.0; port PTCControlPort PTCCP4;} 
+  
+  type component MTC{port MTCControlPort MTCCP1, MTCCP2, MTCCP3, MTCCP4;}
+  
+  type component TSI
+  {
+      port S1APPort S1APT;
+ 	  port S6APort S6AT;
+	  port S13Port S13T; 
+	  port S11Port S11T; 
+  }
+}

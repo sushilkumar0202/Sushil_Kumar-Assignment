@@ -1,0 +1,90 @@
+module TestCase
+{
+   import from TestSystemConfig all;
+   import from ENBFunction all;
+   import from HSSFunction all;
+   import from EIRFunction all;
+   import from SGWFunction all; 
+   import from ControlTemplate all;
+
+   testcase MMETest() runs on MTC system TSI
+   {
+       var ENB_PTC ENB1:= ENB_PTC.create;
+ 	   var HSS_PTC HSS1:= HSS_PTC.create;
+	   var EIR_PTC EIR1:= EIR_PTC.create;
+	   var SGW_PTC SGW1:= SGW_PTC.create;
+
+	   map(ENB1:S1APP, system:S1APT);
+ 	   map(HSS1:S6AP, system:S6AT);
+	   map(EIR1:S13P, system:S13T);
+	   map(SGW1:S11P, system:S11T);
+	   
+	   connect(self:MTCCP1, ENB1:PTCCP1);
+ 	   connect(self:MTCCP2, HSS1:PTCCP2);
+	   connect(self:MTCCP3, EIR1:PTCCP3);
+	   connect(self:MTCCP4, SGW1:PTCCP4);  
+
+       ENB1.start(ENBJob());
+ 	   HSS1.start(HSSJob());
+ 	   EIR1.start(EIRJob());
+	   SGW1.start(SGWJob());
+
+       MTCCP1.send(Start_SF_T1);
+	   MTCCP1.receive(Finished_SF_T1); //enb 5,hss 4, eir 2, sgw 3
+
+       MTCCP4.send(Start_SF_T1);
+       MTCCP4.receive(Finished_SF_T1); //enb 5,hss 4, eir 2, sgw 2
+
+       MTCCP2.send(Start_SF_T1);
+       MTCCP2.receive(Finished_SF_T1); //enb 5,hss 3, eir 2, sgw 2
+
+ 	   MTCCP3.send(Start_SF_T1);
+       MTCCP3.receive(Finished_SF_T1); //enb 5,hss 3, eir 1, sgw 2 
+       
+ 	   MTCCP2.send(Start_SF_T1); 
+       MTCCP1.send(Start_SF_T1);
+ 	   MTCCP2.receive(Finished_SF_T1); 
+       MTCCP1.receive(Finished_SF_T1); //enb 4,hss 2, eir 1, sgw 2
+
+ 	   MTCCP1.send(Start_SF_T1);
+	   MTCCP1.receive(Finished_SF_T1); //enb 3,hss 2, eir 1, sgw 2
+
+ 	   MTCCP1.send(Start_SF_T1);
+	   MTCCP1.receive(Finished_SF_T1); //enb 2,hss 2, eir 1, sgw 2
+	   
+	   MTCCP3.send(Start_SF_T1);
+	   MTCCP2.send(Start_SF_T1);
+	   MTCCP4.send(Start_SF_T1);
+	   MTCCP1.send(Start_SF_T1);
+	   MTCCP3.receive(Finished_SF_T1);
+ 	   MTCCP2.receive(Finished_SF_T1); 
+ 	   MTCCP4.receive(Finished_SF_T1); 
+ 	   MTCCP1.receive(Finished_SF_T1); //enb 1,hss 1, eir 0, sgw 1// eir done
+
+       MTCCP4.send(Start_SF_T1);
+ 	   MTCCP2.send(Start_SF_T1);
+       MTCCP1.send(Start_SF_T1);
+	   MTCCP1.receive(Finished_SF_T1);
+	   MTCCP4.receive(Finished_SF_T1);
+	   MTCCP2.receive(Finished_SF_T1); //enb 0,hss 0, eir 0, sgw 0// enb,sgw,hss done   
+
+	   all component.done;
+
+ 	   disconnect(self:MTCCP1, ENB1:PTCCP1);
+ 	   disconnect(self:MTCCP2, HSS1:PTCCP2);
+	   disconnect(self:MTCCP3, EIR1:PTCCP3);
+	   disconnect(self:MTCCP4, SGW1:PTCCP4); 
+
+       unmap(ENB1:S1APP, system:S1APT);
+ 	   unmap(HSS1:S6AP, system:S6AT);
+	   unmap(EIR1:S13P, system:S13T);
+	   unmap(SGW1:S11P, system:S11T);
+
+	   stop;
+   }
+
+   control
+   {
+       execute(MMETest());
+   }
+}
