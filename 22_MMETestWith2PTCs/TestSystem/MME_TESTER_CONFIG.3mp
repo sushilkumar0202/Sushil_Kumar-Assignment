@@ -1,0 +1,38 @@
+module MME_TESTER_CONFIG
+{
+    import from S1APMessage all;
+    import from DIAMETERMessage all;	
+
+	type port S1APPort message
+	{
+	   out S1AP_InitialUEMessage;
+	   in S1AP_DLNASTransport;
+	}
+
+	type port S6APort message
+	{
+	   out DIAMETER_AIA;
+	   in DIAMETER_AIR;
+	}
+
+	type component ENB_PTC
+	{
+	   port S1APPort S1APP;
+	   timer S1Timer:= 10.0;
+	}
+
+	type component HSS_PTC
+	{
+	   port S6APort S6AP;
+	   timer S6Timer:= 10.0;
+	}
+
+	type component MY_MTC{}
+
+	type component MY_TSI
+	{
+	   port S1APPort S1APT;
+       port S6APort S6AT;
+	}
+
+}

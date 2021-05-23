@@ -1,0 +1,30 @@
+module MMETest
+{
+    import from MME_TESTER_CONFIG all;
+	import from ENBFunction all;
+    import from HSSFunction all;	
+	
+	testcase MMEATTACHTest() runs on MY_MTC system MY_TSI
+	{
+	   var ENB_PTC ENB1:= ENB_PTC.create;
+	   var HSS_PTC HSS1:= HSS_PTC.create;
+	   
+	   map(ENB1:S1APP, system:S1APT);
+	   map(HSS1:S6AP, system:S6AT);
+
+       HSS1.start(HSSJob());
+	   ENB1.start(ENBJob());
+	   
+       all component.done;
+
+ 	   unmap(ENB1:S1APP, system:S1APT);
+	   unmap(HSS1:S6AP, system:S6AT); 
+
+	   stop;
+	}
+
+	control
+	{
+	   execute(MMEATTACHTest());
+	}
+}

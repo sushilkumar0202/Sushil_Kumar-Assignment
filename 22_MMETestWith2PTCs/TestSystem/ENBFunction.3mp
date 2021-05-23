@@ -1,0 +1,30 @@
+module ENBFunction
+{
+    import from S1APTemplate all;
+	import from MME_TESTER_CONFIG all;
+
+	function ENBJob() runs on ENB_PTC
+	{
+	   
+ 	   S1APP.send(S1AP_IUM_S_T1);
+	   S1Timer.start;
+
+	   alt
+	   {
+	      []S1APP.receive(S1AP_DLNT_R_T1)
+		  {
+		     S1Timer.stop;
+			 setverdict(pass);
+		  }
+		  []S1APP.receive
+		  {
+		     S1Timer.stop;
+			 setverdict(fail);
+		  }
+		  []S1Timer.timeout
+		  {
+		     setverdict(fail);
+		  }
+	   }
+	}
+}

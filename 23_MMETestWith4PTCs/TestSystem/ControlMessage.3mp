@@ -1,0 +1,5 @@
+module ControlMessage
+{
+   type charstring Start_SF;
+   type charstring Finished_SF;
+}

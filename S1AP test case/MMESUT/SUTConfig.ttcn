@@ -19,6 +19,6 @@ module SUTConfig
 	  import from S1AP_Constants language "ASN.1:1997" all ;
 	  import from S1AP_CommonDataTypes language "ASN.1:1997" all ;
     
-      type port MMEPort message {inout S1AP_PDU;}
-      type component MMEComp {port MMEPort MMEP;}
+      type port S1APPort message {inout S1AP_PDU;}
+      type component MMEComp {port S1APPort MMEP;}
 }

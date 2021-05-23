@@ -1,0 +1,29 @@
+module HSSFunction
+{
+    import from DIAMETERTemplate all;
+	import from MME_TESTER_CONFIG all;
+
+	function HSSJob() runs on HSS_PTC
+	{
+	   S6Timer.start;
+
+	   alt
+	   {
+	      []S6AP.receive(DIAMETER_AIR_R_T1)
+		  {
+		      S6Timer.stop;
+              S6AP.send(DIAMETER_AIA_S_T1);
+			  setverdict(pass);
+		  }
+		  []S6AP.receive
+		  {
+		      S6Timer.stop;
+			  setverdict(fail);
+		  }
+		  []S6Timer.timeout
+		  {
+		      setverdict(fail);
+		  }
+	   }
+	}
+}

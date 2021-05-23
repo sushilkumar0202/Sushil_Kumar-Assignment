@@ -1,0 +1,11 @@
+module S1APMessage
+{
+   type charstring SR;
+   type charstring SRs;
+   type charstring IUM;
+   type charstring DLNAST;
+   type charstring ULNAST;
+   type charstring IUCSR;
+   type charstring IUCSRs; 
+
+}

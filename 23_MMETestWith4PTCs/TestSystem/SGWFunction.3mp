@@ -1,0 +1,93 @@
+module SGWFunction
+{
+   import from TestSystemConfig all;
+   import from S11Template all;
+   import from ControlTemplate all; 
+
+   function SGWJob() runs on SGW_PTC
+   {
+      PTCCP4.receive(Start_SF_T1);
+      SF1_S_ER_R_ERs();
+ 	  PTCCP4.send(Finished_SF_T1);
+
+      PTCCP4.receive(Start_SF_T1);	   
+ 	  SF2_S_CSRs_R_CSR();
+ 	  PTCCP4.send(Finished_SF_T1); 
+
+      PTCCP4.receive(Start_SF_T1);	
+ 	  SF3_S_MBRs_R_MBR();
+	  PTCCP4.send(Finished_SF_T1); 
+   }	
+
+   function SF1_S_ER_R_ERs() runs on SGW_PTC 
+   {
+      S11P.send(ER_S_T1);
+	  t4.start;
+
+	  alt
+	  {
+	    []S11P.receive(ERs_R_T1)
+		{
+		   t4.stop;
+		   setverdict(pass);
+		}
+		[]S11P.receive
+		{
+		   t4.stop;
+		   setverdict(fail);
+		}
+		[]t4.timeout
+		{
+		   setverdict(fail);
+		}
+	  }
+   }
+
+   function SF2_S_CSRs_R_CSR() runs on SGW_PTC 
+   {
+	  t4.start;
+
+	  alt
+	  {
+	    []S11P.receive(CSR_R_T1)
+		{
+		   t4.stop;
+ 		   S11P.send(CSRs_S_T1); 
+		   setverdict(pass);
+		}
+		[]S11P.receive
+		{
+		   t4.stop;
+		   setverdict(fail);
+		}
+		[]t4.timeout
+		{
+		   setverdict(fail);
+		}
+	  }
+   } 
+
+   function SF3_S_MBRs_R_MBR() runs on SGW_PTC 
+   {
+	  t4.start;
+
+	  alt
+	  {
+	    []S11P.receive(MBR_R_T1)
+		{
+		   t4.stop;
+ 		   S11P.send(MBRs_S_T1); 
+		   setverdict(pass);
+		}
+		[]S11P.receive
+		{
+		   t4.stop;
+		   setverdict(fail);
+		}
+		[]t4.timeout
+		{
+		   setverdict(fail);
+		}
+	  }
+   } 
+}

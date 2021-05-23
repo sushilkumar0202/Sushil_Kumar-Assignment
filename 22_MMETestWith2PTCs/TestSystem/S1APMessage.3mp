@@ -1,0 +1,6 @@
+module S1APMessage
+{
+   type charstring S1AP_InitialUEMessage;
+   type charstring S1AP_DLNASTransport; 
+
+}

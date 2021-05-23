@@ -1,0 +1,44 @@
+module MMEActing
+{
+    type charstring S1AP_InitialUEMessage;
+    type charstring S1AP_DLNASTransport;
+    type charstring DIAMETER_AIR;
+    type charstring DIAMETER_AIA;
+   
+    template S1AP_InitialUEMessage S1AP_IUM_R_T1:= "ENB S1AP UEID+NAS:AttachRequest+PDNConnectReq+ECGI+TAI";
+    template S1AP_DLNASTransport S1AP_DLNT_S_T1:= "ENB S1AP UEID+MME S1AP UEID+NAS:AuthenticationReq"; 
+    template DIAMETER_AIR DIAMETER_AIR_S_T1:= "SESSION ID+IMSI+EUTRAN AUTH Details";
+    template DIAMETER_AIA DIAMETER_AIA_R_T1:= "SESSION ID+IMSI+EUTRA AUTH INFO:XRES,RAND,AUTN,KASME";
+
+    type port S1APPort message
+    {
+	   in S1AP_InitialUEMessage;
+	   out S1AP_DLNASTransport;
+    }
+
+	type port S6APort message
+	{
+	   in DIAMETER_AIA;
+	   out DIAMETER_AIR;
+	}
+ 
+    type component MMESUT
+	{
+	   port S1APPort S1APS;
+       port S6APort S6AS;
+	}
+
+	testcase MMESUTTest() runs on MMESUT
+	{
+	   S1APS.receive(S1AP_IUM_R_T1);
+       S6AS.send(DIAMETER_AIR_S_T1);
+	   S6AS.receive(DIAMETER_AIA_R_T1);
+       S1APS.send(S1AP_DLNT_S_T1);
+	}
+
+	control
+	{
+	   execute(MMESUTTest());
+	}
+    
+}
