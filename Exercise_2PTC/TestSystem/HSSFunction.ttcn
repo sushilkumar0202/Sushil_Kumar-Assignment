@@ -1,0 +1,42 @@
+/*
+ * @author
+ *     
+ * @version
+ *     1.0
+ * @desc
+ *     
+ * @remark
+ *     
+ * @see
+ *     
+ */ 
+module HSSFunction 
+{
+    import from AIATemplate all;
+    import from AIRTemplate all;
+    import from TestConfig all;
+    
+    function HSSJob() runs on HSS_PTC
+    {
+        t2.start;
+        
+        alt
+        {
+          []S6AP.receive(R_AIR_T1)
+            {
+                t2.stop;
+                S6AP.send(S_AIA_T1);
+                setverdict(pass);
+            }
+          []S6AP.receive
+            {
+                t2.stop;
+                setverdict(fail);
+            }
+          []t2.timeout
+            {
+                setverdict(fail);
+            }
+        }    
+    }
+}

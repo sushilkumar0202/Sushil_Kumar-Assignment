@@ -1,0 +1,58 @@
+/*
+ * @author
+ *     
+ * @version
+ *     1.0
+ * @desc
+ *     
+ * @remark
+ *     
+ * @see
+ *     
+ */ 
+module TestConfig 
+{
+    import from S1AP_PDU_Descriptions language "ASN.1:1997" all ;
+ 	import from S1AP_PDU_Contents language "ASN.1:1997" all ;
+	import from S1AP_IEs language "ASN.1:1997" all ;
+	import from S1AP_Containers language "ASN.1:1997" all ;
+	import from S1AP_Constants language "ASN.1:1997" all ;
+    import from S1AP_CommonDataTypes language "ASN.1:1997" all ;
+    import from DiameterAIA all;
+    import from DiameterAIR all;
+    import from S1APInitialUEMessage all;
+    import from DLNASTransport all;
+    import from AIATemplate all;
+    import from AIRTemplate all;
+    
+    type port S1APPort message 
+    {
+        out S1AP_PDU;
+        in S1AP_PDU;
+    }
+    
+    type port S6APort message 
+    {
+        out AIR;
+        in AIA;
+    }
+    
+    type component MMESUT
+    {
+        port S1APPort S1APS;
+        port S6APort S6AS;
+    }
+    
+    testcase MMEACT() runs on MMESUT
+    {
+        S1APS.receive(S1AP_PDU_INITIALUEMESSAGE_R_T1);
+        S6AS.send(S_AIR_T1);
+        S6AS.receive(R_AIA_T1);
+        S1APS.send(S1AP_PDU_DLNASTransport_S_T1);
+    }
+    
+    control
+    {
+        execute(MMEACT());
+    }
+}

@@ -1,0 +1,46 @@
+/*
+ * @author
+ *     
+ * @version
+ *     1.0
+ * @desc
+ *     
+ * @remark
+ *     
+ * @see
+ *     
+ */ 
+module TestConfig 
+{
+    import from S1AP_PDU_Descriptions language "ASN.1:1997" all ;
+ 	import from S1AP_PDU_Contents language "ASN.1:1997" all ;
+	import from S1AP_IEs language "ASN.1:1997" all ;
+	import from S1AP_Containers language "ASN.1:1997" all ;
+	import from S1AP_Constants language "ASN.1:1997" all ;
+    import from S1AP_CommonDataTypes language "ASN.1:1997" all ;
+    import from DiameterAIA all;
+    import from DiameterAIR all;
+    
+    type port S1APPort message 
+    {
+        in S1AP_PDU;
+        out S1AP_PDU;
+    }
+    
+    type port S6APort message 
+    {
+        in AIR;
+        out AIA;
+    }
+    
+    type component ENB_PTC {port S1APPort S1APP;timer t1:= 10.0;}
+    type component HSS_PTC {port S6APort S6AP;timer t2:= 10.0;}
+    
+    type component MTC{};
+    
+    type component TSI
+    {
+        port S1APPort S1APT;
+        port S6APort S6AT;
+    }
+}

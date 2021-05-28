@@ -1,0 +1,132 @@
+/*
+ * @author
+ *     
+ * @version
+ *     1.0
+ * @desc
+ *     
+ * @remark
+ *     
+ * @see
+ *     
+ */ 
+module DiameterAIA 
+{
+    type record AIAHeader
+    {
+        integer version(0..255),
+        integer messagelength(0..16777215),
+        boolean r,
+        boolean p,
+        boolean e,
+        boolean t,
+        boolean r1,
+        boolean r2,
+        boolean r3,
+        boolean r4,
+        integer commandcode(0..16777215),
+        integer applicationid(0..4294967295),
+        integer hopbyhopid(0..4294967295),
+        integer endtoendid(0..4294967295)
+    }
+    
+    type record AVPHeader
+    {
+        integer avpcode(0..4294967295),
+        boolean v,
+        boolean m,
+        boolean p,
+        boolean r1,
+        boolean r2,
+        boolean r3,
+        boolean r4,
+        boolean r5,
+        integer avplength(0..16777215),
+        integer vendorid(0..4294967295) optional
+    }
+    
+    type record SessionId
+    {
+        charstring sessioniddata,
+        integer pad1(0..255) optional,
+        integer pad2(0..255) optional,
+        integer pad3(0..255) optional
+    }
+    
+    type enumerated AuthSessionState
+    {
+        STATE_MAINTAINED,
+        NO_STATE_MAINTAINED
+    }
+    
+    type record OriginHost
+    {
+        charstring originhostdata,
+        integer pad1(0..255) optional,
+        integer pad2(0..255) optional,
+        integer pad3(0..255) optional
+    }
+    
+    type record OriginRealm
+    {
+        charstring originrealmdata,
+        integer pad1(0..255) optional,
+        integer pad2(0..255) optional,
+        integer pad3(0..255) optional
+    }
+    
+    type record EUTRANVector
+    {
+        integer itemnumber optional,
+        octetstring rand,
+        octetstring xres,
+        octetstring autn,
+        octetstring kasme
+    }
+    
+    type record AuthenticationInfo
+    {
+        EUTRANVector eUTRANVector,
+        AVPHeader aVPHeader
+    }
+    
+    type record AuthenticationInfoAVP
+    {
+        AVPHeader avpheader,
+        AuthenticationInfo authenticationinfo
+    }
+    
+    type record SessionIdAVP
+    {
+        AVPHeader avpheader,
+        SessionId sessionid
+    }
+    
+    type record AuthSessionStateAVP
+    {
+        AVPHeader avpheader,
+        AuthSessionState authsessionstate
+    }
+    
+    type record OriginHostAVP
+    {
+        AVPHeader avpheader,
+        OriginHost originhost
+    }
+    
+    type record OriginRealmAVP
+    {
+        AVPHeader avpheader,
+        OriginRealm originrealm
+    }
+    
+    type record AIA
+    {
+        AIAHeader aIAHeader,
+        SessionIdAVP sessionIdAVP,
+        AuthSessionStateAVP authSessionStateAVP,
+        OriginHostAVP originHostAVP,
+        OriginRealmAVP originRealmAVP,
+        AuthenticationInfoAVP authenticationInfoAVP
+    }
+}

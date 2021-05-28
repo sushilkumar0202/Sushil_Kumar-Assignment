@@ -1,0 +1,178 @@
+/*
+ * @author
+ *     
+ * @version
+ *     1.0
+ * @desc
+ *     
+ * @remark
+ *     
+ * @see
+ *     
+ */ 
+module AIATemplate 
+{
+    import from DiameterAIA all;
+    
+    template AIA R_AIA_T1:=
+    {
+        aIAHeader:= 
+        {
+            version:= 1,
+            messagelength:= 20+8+56+8+8+20+8+16+24,
+            r:= false,
+            p:= true,
+            e:= false,
+            t:= false,
+            r1:= false,
+            r2:= false,
+            r3:= false,
+            r4:= false,
+            commandcode:= 318,
+            applicationid:= 16777251,
+            hopbyhopid:= 3435465,
+            endtoendid:= 978776
+        },
+        
+        sessionIdAVP:=
+        {
+            avpheader:=
+            {
+                avpcode:= 263,
+                v:= false,
+                m:= true,
+                p:= false,
+                r1:= false,
+                r2:= false,
+                r3:= false,
+                r4:= false,
+                r5:= false,
+                avplength:= 8+56,
+                vendorid:= omit
+            },
+            
+            sessionid:= 
+            {
+                sessioniddata:= "tcloud.dra.3gppnetwork.org:33041;893;23432;2358;0AF3B81", // 56
+                pad1:= omit,
+                pad2:= omit,
+                pad3:= omit
+            } //56+0
+        },
+        
+         authSessionStateAVP:=
+        {
+            avpheader:=
+            {
+                avpcode:= 277,
+                v:= false,
+                m:= true,
+                p:= false,
+                r1:= false,
+                r2:= false,
+                r3:= false,
+                r4:= false,
+                r5:= false,
+                avplength:= 8,
+                vendorid:= omit
+            },
+            
+            authsessionstate:= NO_STATE_MAINTAINED
+        },
+        
+        originHostAVP:=
+        {
+            avpheader:=
+            {
+                avpcode:= 264,
+                v:= false,
+                m:= true,
+                p:= false,
+                r1:= false,
+                r2:= false,
+                r3:= false,
+                r4:= false,
+                r5:= false,
+                avplength:= 8+20,
+                vendorid:= omit
+            },
+            
+            originhost:=
+            {
+                originhostdata:= "dra.3gppnetwork.org", //20
+                pad1:= omit,
+                pad2:= omit,
+                pad3:= omit
+            } //20+0
+        },
+        
+        originRealmAVP:=
+        {
+            avpheader:=
+            {
+                avpcode:= 296,
+                v:= false,
+                m:= true,
+                p:= false,
+                r1:= false,
+                r2:= false,
+                r3:= false,
+                r4:= false,
+                r5:= false,
+                avplength:= 8+16,
+                vendorid:= omit
+            },
+            
+            originrealm:=
+            {
+                originrealmdata:= "3gppnetwork.org",//16
+                pad1:= omit,
+                pad2:= omit,
+                pad3:= omit
+            } //16+0
+        },
+        
+        authenticationInfoAVP:=
+        {
+            avpheader:=
+            {
+                avpcode:= 1413,
+                v:= true,
+                m:= true,
+                p:= false,
+                r1:= false,
+                r2:= false,
+                r3:= false,
+                r4:= false,
+                r5:= false,
+                avplength:= 8+8+8,
+                vendorid:= 10415
+            },
+            authenticationinfo:=
+            {
+                  aVPHeader:=
+                  {
+                       avpcode:= 1414,
+                       v:= true,
+                       m:= true,
+                       p:= false,
+                       r1:= false,
+                       r2:= false,
+                       r3:= false,
+                       r4:= false,
+                       r5:= false,
+                       avplength:= 8+8,
+                       vendorid:= 10415
+                  },
+                  eUTRANVector:=
+                  {
+                      itemnumber:= omit,
+                      rand:= '1234'O,
+                      xres:= '5678'O,
+                      autn:= '9012'O,
+                      kasme:= '3456'O
+                  }
+            }
+        }
+    }
+}

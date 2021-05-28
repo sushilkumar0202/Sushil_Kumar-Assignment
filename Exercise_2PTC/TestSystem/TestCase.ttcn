@@ -1,0 +1,42 @@
+/*
+ * @author
+ *     
+ * @version
+ *     1.0
+ * @desc
+ *     
+ * @remark
+ *     
+ * @see
+ *     
+ */ 
+module TestCase 
+{
+    import from TestConfig all;
+    import from ENBFunction all;
+    import from HSSFunction all;
+    
+    testcase MMETest() runs on MTC system TSI
+    {
+        var ENB_PTC ENB1:= ENB_PTC.create;
+        var HSS_PTC HSS1:= HSS_PTC.create;
+        
+        map(ENB1:S1APP, system:S1APT);
+        map(HSS1:S6AP, system:S6AT);
+        
+        ENB1.start(ENBJob());
+        HSS1.start(HSSJob());
+        
+        all component.done;
+        
+        unmap(ENB1:S1APP, system:S1APT);
+        unmap(HSS1:S6AP, system:S6AT);
+        
+        stop;
+    }
+    
+    control
+    {
+        execute(MMETest());
+    }
+}

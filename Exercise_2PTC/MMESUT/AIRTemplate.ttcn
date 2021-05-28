@@ -1,0 +1,254 @@
+/*
+ * @author
+ *     
+ * @version
+ *     1.0
+ * @desc
+ *     
+ * @remark
+ *     
+ * @see
+ *     
+ */ 
+module AIRTemplate 
+{
+    import from DiameterAIR all;
+    
+    template AIR S_AIR_T1:=
+    {
+        aIRHeader:= 
+        {
+            version:= 1,
+            messagelength:= 20+8+56+8+8+20+8+16+8+24+8+20+8+16+8+3,
+            r:= true,
+            p:= true,
+            e:= false,
+            t:= false,
+            r1:= false,
+            r2:= false,
+            r3:= false,
+            r4:= false,
+            commandcode:= 318,
+            applicationid:= 16777251,
+            hopbyhopid:= 3435465,
+            endtoendid:= 978776
+        },
+        
+        sessionIdAVP:=
+        {
+            avpheader:=
+            {
+                avpcode:= 263,
+                v:= false,
+                m:= true,
+                p:= false,
+                r1:= false,
+                r2:= false,
+                r3:= false,
+                r4:= false,
+                r5:= false,
+                avplength:= 8+56,
+                vendorid:= omit
+            },
+            
+            sessionid:= 
+            {
+                sessioniddata:= "tcloud.dra.3gppnetwork.org:33041;893;23432;2358;0AF3B81", // 56
+                pad1:= omit,
+                pad2:= omit,
+                pad3:= omit
+            } //56+0
+        },
+        
+        authSessionStateAVP:=
+        {
+            avpheader:=
+            {
+                avpcode:= 277,
+                v:= false,
+                m:= true,
+                p:= false,
+                r1:= false,
+                r2:= false,
+                r3:= false,
+                r4:= false,
+                r5:= false,
+                avplength:= 8,
+                vendorid:= omit
+            },
+            
+            authsessionstate:= NO_STATE_MAINTAINED
+        },
+        
+        originHostAVP:=
+        {
+            avpheader:=
+            {
+                avpcode:= 264,
+                v:= false,
+                m:= true,
+                p:= false,
+                r1:= false,
+                r2:= false,
+                r3:= false,
+                r4:= false,
+                r5:= false,
+                avplength:= 8+20,
+                vendorid:= omit
+            },
+            
+            originhost:=
+            {
+                originhostdata:= "dra.3gppnetwork.org", //20
+                pad1:= omit,
+                pad2:= omit,
+                pad3:= omit
+            } //20+0
+        },
+        
+        originRealmAVP:=
+        {
+            avpheader:=
+            {
+                avpcode:= 296,
+                v:= false,
+                m:= true,
+                p:= false,
+                r1:= false,
+                r2:= false,
+                r3:= false,
+                r4:= false,
+                r5:= false,
+                avplength:= 8+16,
+                vendorid:= omit
+            },
+            
+            originrealm:=
+            {
+                originrealmdata:= "3gppnetwork.org",//16
+                pad1:= omit,
+                pad2:= omit,
+                pad3:= omit
+            } //16+0
+        },
+        
+        destinationHostAVP:=
+        {
+            avpheader:=
+            {
+                avpcode:= 293,
+                v:= false,
+                m:= true,
+                p:= false,
+                r1:= false,
+                r2:= false,
+                r3:= false,
+                r4:= false,
+                r5:= false,
+                avplength:= 8+24,
+                vendorid:= omit
+            },
+            destinationhost:=
+            {
+                destinationhostdata:= "HSS.AIC.3GPPNETWORK.ORG",//24
+                pad1:= omit,
+                pad2:= omit,
+                pad3:= omit
+            } //24+0
+        },
+        
+        destinationRealmAVP:=
+        {
+            avpheader:=
+            {
+                avpcode:= 283,
+                v:= false,
+                m:= true,
+                p:= false,
+                r1:= false,
+                r2:= false,
+                r3:= false,
+                r4:= false,
+                r5:= false,
+                avplength:= 8+20,
+                vendorid:= omit
+            },
+            destinationrealm:=
+            {
+                destinationrealmdata:= "AIC.3GPPNETWORK.ORG", //20
+                pad1:= omit,
+                pad2:= omit,
+                pad3:= omit
+            } //20+0
+        },
+        
+        userNameAVP:=
+        {
+            avpheader:=
+            {
+                avpcode:= 1,
+                v:= false,
+                m:= true,
+                p:= false,
+                r1:= false,
+                r2:= false,
+                r3:= false,
+                r4:= false,
+                r5:= false,
+                avplength:= 8+16,
+                vendorid:= omit
+            },
+            username:=
+            {
+                usernamedata:= "405138564920888",//16
+                pad1:= omit,
+                pad2:= omit,
+                pad3:= omit
+            } //16+0
+        },
+        
+        requestedEUTRANAuthenticationInfoAVP:=
+        {
+            avpheader:=
+            {
+                avpcode:= 1408,
+                v:= true,
+                m:= true,
+                p:= false,
+                r1:= false,
+                r2:= false,
+                r3:= false,
+                r4:= false,
+                r5:= false,
+                avplength:= 8,
+                vendorid:= 10415
+            },
+            
+            requestedeutranauthenticationinfo:=
+            {
+                numberofrequestedvectors:= 234555,
+                immediateresponsepreferred:= 1,
+                resynchronizationinfo:= '123456'O
+            }
+        },
+        
+        visitedPLMNIdAVP:=
+        {
+            avpheader:=
+            {
+                avpcode:= 1407,
+                v:= true,
+                m:= true,
+                p:= false,
+                r1:= false,
+                r2:= false,
+                r3:= false,
+                r4:= false,
+                r5:= false,
+                avplength:= 8,
+                vendorid:= 10415
+            },
+            visitedplmnid:= '405132'O
+        }
+    }
+}

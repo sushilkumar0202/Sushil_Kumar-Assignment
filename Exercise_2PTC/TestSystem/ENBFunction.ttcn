@@ -1,0 +1,42 @@
+/*
+ * @author
+ *     
+ * @version
+ *     1.0
+ * @desc
+ *     
+ * @remark
+ *     
+ * @see
+ *     
+ */ 
+module ENBFunction 
+{
+    import from S1APInitialUEMessage all;
+    import from DLNASTransport all;
+    import from TestConfig all;
+    
+    function ENBJob() runs on ENB_PTC
+    {
+        t1.start;
+        S1APP.send(S1AP_PDU_INITIALUEMESSAGE_S_T1);
+        
+        alt
+        {
+            []S1APP.receive(S1AP_PDU_DLNASTransport_R_T1)
+            {
+                t1.stop;
+                setverdict(pass);              
+            }
+            []S1APP.receive
+            {
+                t1.stop;
+                setverdict(fail);
+            }
+            []t1.timeout
+            {
+                setverdict(fail);
+            }
+        }
+    }
+}
