@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tcp_conf>
+ <tri_port>7777</tri_port>
+ <buffer>32767</buffer>
+ <client_mode>False</client_mode>
+ <reset_connections>True</reset_connections>
+ <msg_delim>0x0D,0x0A,0x0D,0x0A</msg_delim>
+ <delim_incl>True</delim_incl>
+ <no_pa>False</no_pa>
+ <port_map>
+  <item>
+   <tsi>HTTPS</tsi>
+   <sut_addr>::1</sut_addr>
+   <sut_port>20000</sut_port>
+   <sa_port>52017</sa_port>
+  </item>
+ </port_map>
+</tcp_conf>

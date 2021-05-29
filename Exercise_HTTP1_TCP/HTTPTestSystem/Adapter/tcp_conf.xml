@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tcp_conf>
+ <tri_port>7776</tri_port>
+ <buffer>32767</buffer>
+ <client_mode>True</client_mode>
+ <reset_connections>True</reset_connections>
+ <msg_delim>0x0D,0x0A,0x0D,0x0A</msg_delim>
+ <delim_incl>True</delim_incl>
+ <no_pa>False</no_pa>
+ <port_map>
+  <item>
+   <tsi>HTTPP</tsi>
+   <sut_addr>::1</sut_addr>
+   <sut_port>52017</sut_port>
+   <sa_port>10000</sa_port>
+  </item>
+ </port_map>
+</tcp_conf>

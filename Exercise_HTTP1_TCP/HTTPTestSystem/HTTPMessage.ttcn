@@ -1,0 +1,53 @@
+/*
+ * @author
+ *     
+ * @version
+ *     1.0
+ * @desc
+ *     
+ * @remark
+ *     
+ * @see
+ *     
+ */ 
+module HTTPMessage 
+{
+    type universal charstring univ;
+    
+    type record HTTPRecord
+    {
+        univ get,
+        univ host,
+        univ useragent,
+        univ accept,
+        univ connection,
+        univ upgrade,
+        univ http2settings
+    }
+    
+    template HTTPRecord S_HTTPRecord_T1:=
+    {
+        get:= "GET /robots.txt HTTP/1.1",
+        host:= "Host: nghttp2.org",
+        useragent:= "User-Agent: curl/7.61.0",
+        accept:= "Accept: */*",
+        connection:= "Connection: Upgrade, HTTP2-Settings",
+        upgrade:= "Upgrade: h2c",
+        http2settings:= "HTTP2-Settings: AAMAAABkAARAAAAAAAIAAAAA"
+    }
+    
+    type port HTTPPort message {inout HTTPRecord;}
+    
+    type component HTTPComp {port HTTPPort HTTPP;}
+    
+    testcase HTTPTest() runs on HTTPComp
+    {
+        HTTPP.send(S_HTTPRecord_T1);
+        setverdict(pass);
+    }
+    
+    control
+    {
+        execute(HTTPTest());
+    }
+}
